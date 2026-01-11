@@ -315,6 +315,7 @@ type SemanticCache struct {
   EvictionPolicy string `yaml:"eviction_policy,omitempty"`
 
   // RedisConfig
+  Redis RedisConfig `yaml:"redis,omitempty"`
 
   // Path to backend-specific configuration file
   BackendConfigPath string `yaml:"backend_config_path,omitempty"`
