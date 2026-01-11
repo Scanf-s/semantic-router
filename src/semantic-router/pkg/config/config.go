@@ -392,10 +392,14 @@ type SemanticCache struct {
   // Eviction policy for in-memory cache ("fifo", "lru", "lfu")
   EvictionPolicy string `yaml:"eviction_policy,omitempty"`
 
-  // RedisConfig
+  // RedisConfig helps to configure the Redis cache backend.
   Redis RedisConfig `yaml:"redis,omitempty"`
 
-  // Path to backend-specific configuration file
+  // MilvusConfig helps to configure the Milvus cache backend.
+  Milvus MilvusConfig `yaml:"milvus,omitempty"`
+
+  // (Deprecated) Path to backend-specific configuration file
+  // Rather to use this configuration, please use the Redis or Milvus fields to configure the cache backend.
   BackendConfigPath string `yaml:"backend_config_path,omitempty"`
 
   // Embedding model to use for semantic similarity ("bert", "qwen3", "gemma")
